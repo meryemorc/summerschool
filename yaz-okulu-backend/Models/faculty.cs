@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class Faculty
 {
     [Key]
-    public int Id { get; set; }  // Birincil anahtar (Primary Key)
+    public int id { get; set; }  // Birincil anahtar (Primary Key)
 
     [Required]
     [MaxLength(255)]
-    public string Name { get; set; } = string.Empty;  // Fakülte adı
+    public string name { get; set; } = string.Empty;  // Fakülte adı
 
     [ForeignKey("University")]
-    public int UniversityId { get; set; }  // Üniversite ile ilişki
+    public int university_id { get; set; }  // Üniversite ile ilişki
 
-    public string? WhatsappLink { get; set; }  // WhatsApp linki opsiyonel (NULL olabilir)
+    public string? whatsapp_link { get; set; }  // WhatsApp linki opsiyonel (NULL olabilir)
 
     // Navigation Property
     public University? University { get; set; }  // Üniversite ile ilişki

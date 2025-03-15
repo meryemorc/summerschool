@@ -2,8 +2,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-[Table("comments")]
-public class Comment
+[Table("course_enrollments")]
+public class CourseEnrollment
 {
     [Key]
     [Column("id")]
@@ -20,15 +20,11 @@ public class Comment
     public int CourseId { get; set; }  
 
     [Required]
-    [Column("comment_text")]
-    public string CommentText { get; set; } = string.Empty;
-
-    [Required]
-    [Column("created_at")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    [Column("enrollment_date")]
+    public DateTime EnrollmentDate { get; set; } = DateTime.UtcNow;
 
     // Navigation Properties (JSON Ignore eklenerek API'de gösterilmez)
-    [JsonIgnore] 
+    [JsonIgnore]
     public User? User { get; set; }
 
     [JsonIgnore]

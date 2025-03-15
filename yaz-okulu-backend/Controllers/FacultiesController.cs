@@ -38,14 +38,14 @@ public class FacultiesController : ControllerBase
     {
         _context.faculties.Add(faculty);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetFaculty), new { id = faculty.Id }, faculty);
+        return CreatedAtAction(nameof(GetFaculty), new { id = faculty.id }, faculty);
     }
 
     // 📌 4. Fakülte Güncelle
     [HttpPut("{id}")]
     public async Task<IActionResult> PutFaculty(int id, Faculty faculty)
     {
-        if (id != faculty.Id)
+        if (id != faculty.id)
         {
             return BadRequest();
         }
